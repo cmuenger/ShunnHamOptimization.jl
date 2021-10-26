@@ -1,3 +1,5 @@
+
+#Build symbolic partial derivative from multi index 'idx'
 function partial_derivative(idx)
   
     s = String("")
@@ -10,6 +12,7 @@ function partial_derivative(idx)
     Sym("f_"*s)
 end
 
+#Build symbolic d-dimesional Taylor expansion around origin up to order n
 function multitaylor(n,d)
     sum = 0
 
@@ -19,6 +22,7 @@ function multitaylor(n,d)
     sum
 end
 
+#Build symbolic expression of the n-th order term of the d-dimesnional Taylor expansion
 function nth_multitaylor(n,d)
     x =[]
     for i in 1:d
@@ -45,6 +49,7 @@ function nth_multitaylor(n,d)
     sum
 end
 
+#Build symbolic expression for n-th degree polynom
 function nth_deegree_poly(n,d)
     x =[]
     for i in 1:d
@@ -83,7 +88,7 @@ function f_sub(d,x, w,f)
     res
 end
 
-#computer error up to given order
+#Compute error up to given order
 function error(d,x,w,f,s)
     err = 0
     
@@ -93,6 +98,7 @@ function error(d,x,w,f,s)
     err 
 end
 
+#Get reduced row echelon of the coefficient matrix and and vector u
 function getCoeffMatrix(Cu,n,p)
 
     u = [Sym(1)]
@@ -145,6 +151,7 @@ function getCoeffMatrix(Cu,n,p)
     return Ca,u
 end
 
+#Compute constraint from error expression 
 function getConstraints(err,n,d,p)
 
     #Get error of n-th order

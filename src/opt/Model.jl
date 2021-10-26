@@ -21,7 +21,6 @@ struct JuliaModel <: Model
 end
 
 
-
 function numParameters(m::Model)
     sum(m.p.n)
 end
@@ -41,32 +40,6 @@ end
 function get_phi(m::Model)
     get_phi(m.p)
 end
-
-#=
-δ = Sym("δ")
-
-α1 = Sym("α1")
-α2 = Sym("α2")
-α3 = Sym("α3")
-α4 = Sym("α4")
-α5 = Sym("α5")
-α6 = Sym("α6")
-α7 = Sym("α7")
-α8 = Sym("α8")
-α9 = Sym("α9")
-α10 = Sym("α10")
-α11 = Sym("α11")
-α12 = Sym("α12")
-
-
-γ1 = Sym("γ1")
-γ2 = Sym("γ2")
-γ3 = Sym("γ3")
-γ4 = Sym("γ4")
-γ5 = Sym("γ5")
-γ6 = Sym("γ6")
-γ7 = Sym("γ7")
-=#
 
 
 function build_optmodel(f,constraints,parameter,init,name,filename)
